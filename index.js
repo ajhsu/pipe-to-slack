@@ -1,24 +1,16 @@
 #!/usr/bin/env node
-'use strict'
+'use strict';
 
-const axios = require('axios');
 const stdin = process.openStdin();
-const config = require('home-config').load('.p2s');
-const channel = process.argv[2] || config.defaultChannel;
-const webHook = config.webHook;
+const telegram = require('./telegram');
+const config = require('home-config').load('.p2t');
+const token = config.token;
+const chatId = config.chatId;
 
-let data = '';
-if (channel && webHook) {
-  stdin.on('data', (chunk) => {
-    axios.post(config.webHook, {
-      channel: channel,
-      username: config.username || 'Pipe Bot',
-      text: chunk.toString('utf8'),
-      icon_emoji: ':printer:',
-    });
-    data += chunk;
+if (token && chatId) {
+  stdin.on('data', chunk => {
+    telegram.sendMessage(chunk.toString('utf8'), chatId, token);
   });
-
   stdin.on('end', () => {
     console.log('PIPE TO SLACK COMPLETED');
   });

@@ -1,6 +1,6 @@
 {
-  "name": "pipe-to-slack",
-  "version": "1.1.0",
+  "name": "pipe-to-telegram",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clarkie/pipe-to-slack.git"
+    "url": "git+https://github.com/ajhsu/pipe-to-telegram.git"
   },
   "bin": {
-    "p2s": "index.js"
+    "p2t": "index.js"
   },
-  "author": "",
+  "author": "AJ Hsu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/clarkie/pipe-to-slack/issues"
+    "url": "https://github.com/ajhsu/pipe-to-telegram/issues"
   },
-  "homepage": "https://github.com/clarkie/pipe-to-slack#readme",
+  "homepage": "https://github.com/ajhsu/pipe-to-telegram#readme",
   "dependencies": {
     "axios": "^0.14.0",
     "home-config": "^0.1.0"

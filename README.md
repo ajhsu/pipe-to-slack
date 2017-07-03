@@ -1,43 +1,24 @@
-# pipe-to-slack
+# pipe-to-telegram
 
-Pipe any command line output to a slack channel or private message
+Pipe any command line output to a telegram bot.
 
-## Installation
-
-```
-npm install -g pipe-to-slack
-```
+> ***This project is forked from [clarkie/pipe-to-slack](https://github.com/clarkie/pipe-to-slack) but altered to telegram bot as an endpoint.***
 
 ## Configuration
 
-You'll need to create a `.p2s` file in your home directory (e.g. `~/.p2s`). In here you'll need to add your Slack webhook:
+You'll need to create a `.p2t` file in your home directory (e.g. `~/.p2t`). In here you'll need to add your Telegram Bot Token:
 
 ```
-webHook=https://slackWebhookUrl
-defaultChannel=#random
-username="Pipe Bot"
+token=[BOT_API_TOKEN]
+chatId=[USER_CHAT_ID]
 ```
-*defaultChannel and username are optional*
+
+ > note: You can find your chat id via [@get_id_bot](https://telegram.me/get_id_bot). ([Source](https://stackoverflow.com/a/37396871/3917353))
 
 ## Usage
 
-All you need to do is pipe the command into `p2s`.
+All you need to do is pipe the command into `p2t`.
 
 ```
-<command> | p2s <channel or @person>
-```
-*the channel/person argument is optional*
-
-For example:
-
-```
-cat someFile.txt | p2s "#SomeChannelInSlack"
-```
-
-## Why?
-
-My use case is when working with a distributed team it's nice sometimes to demonstrate some particular output from a command. e.g.
-
-```
-npm test | p2s "@myMateDave"
+<command> | p2t
 ```
