@@ -12,6 +12,6 @@ if (token && chatId) {
     telegram.sendMessage(chunk.toString('utf8'), chatId, token);
   });
   stdin.on('end', () => {
-    console.log('PIPE TO SLACK COMPLETED');
+    console.log('Pipe to Telegram completed.');
   });
 }
